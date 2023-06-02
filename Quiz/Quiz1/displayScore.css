@@ -1,0 +1,147 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 13px;
+  color: #333;
+  background-color: #1c1c1c;
+}
+
+a {
+    text-decoration: none;
+    color: #1c1c1c;
+}
+
+.back-btn {
+    font-family: 'Courier New', Courier, monospace;
+    width: 95px;
+    font-size: 24px;
+    margin: 20px 0px 0px 20px;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #2a2a2a;
+    border: 2px solid #00ffff;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    box-shadow: 0px 0px 8px #00ffff;
+    color: black;
+    background-color: #00ffff;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #1c1c1c;
+    box-shadow: 0px 0px 16px rgba(255, 255, 255, 0.1);
+}
+
+.score {
+  font-size: 3em;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+
+.feedback {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.feedback li {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.btnViewLesson {
+  justify-content: center;
+  font-size: 17px;
+  margin: 20px 20px 0px 20px;
+  display: flex;
+  padding: 15px 25px;
+  background-color: #2a2a2a;
+  border: 2px solid #00ffff;
+  color: #fff;
+  text-align: center;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+.btnViewLesson:hover {
+  background-color: #00ffff;
+  color: #1c1c1c;
+  box-shadow: 0px 0px 8px #00ffff;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: center;
+  margin-left: 150px;
+  margin-top: 20px;
+}
+
+.btn {
+    font-size: 17px;
+    margin: 20px 20px 0px 20px;
+    display: inline-block;
+    padding: 15px 25px;
+    background-color: #2a2a2a;
+    border: 2px solid #00ffff;
+    color: #fff;
+    text-align: center;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #00ffff;
+    color: #1c1c1c;
+    box-shadow: 0px 0px 8px #00ffff;
+}
+
+.score::after {
+  content: "";
+  display: block;
+  margin-top: 20px;
+  height: 2px;
+  background-color: #e6e6e6;
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  .back-btn {
+    margin: 10px auto;
+    font-size: 16px;
+    width: 70px;
+    padding: 8px 16px;
+  }
+
+  .score {
+    font-size: 2.5em;
+  }
+
+  .feedback li {
+    font-size: 1.2em;
+  }
+
+  .btn {
+    font-size: 1.5em;
+    padding: 8px 16px;
+    margin-right: 5px;
+  }
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Lesson3.css">
+    <title>Lesson 3</title>
+</head>
+
+<body>
+    <div>
+        <a href="../Lesson.html" class="back-btn">Back</a>
+    </div>
+    <div class="container">
+        <h1 id="lesson3">Lesson 3 : Arrays</h1>
+        <br><br><br>
+        <h1>What is Array?</h1>
+        <p>
+            An array is a linear data structure which can store a fixed-size sequential collection of elements of the
+            same type, which are stored together in a contiguous block of memory. Each element in the array can be
+            accessed by its index, which is an integer value that specifies its position within the array.
+        </p>
+        <p>All arrays consist of contiguous memory locations. The lowest address corresponds to the first element and the highest address to the last element.</p>
+        <img id="big" src="array.png" alt=""> <br> <br>
+
+        <h1>Declaring Arrays</h1>
+        <p>To declare array in C, define the data type (like int) and specify the name of the array followed by square brackets [ ].</p>
+        <img id="big" src="declareArray.png" alt="">
+        <br><br>
+        <h1>Initializing Arrays</h1>
+        <p>Initializing an array in computer programming means assigning initial values to the elements of the array. The number of values between braces {} shall not be greater than the number of elements in the array. In C, there are different ways to initialize arrays. Here are some examples.</p>
+        <p id="parLeft">
+            1. Initializing an array with a specific values. <br>
+            &nbsp; &nbsp; &nbsp; &nbsp;  int arr[] = {1, 2, 3, 4, 5}; <br>
+            2. Initializing an array with values at declaration: <br>
+            &nbsp; &nbsp; &nbsp; &nbsp; int arr[10] = {0}; <br>
+            3. Initializing an array with a specific size and values <br>
+            &nbsp; &nbsp; &nbsp; &nbsp;int balance[5] = {1000, 2, 3, 7, 50};
+        </p><br><br>
+        <h1>Accessing Array Elements</h1> <br>
+        <p>An element is accessed by indexing the array name. This is done by placing the index of the element within square brackets after the name of the array. To access an array element, it follows a method:</p>
+        <p id="parLeft">
+            array_name[index];
+        </p>
+        <p>
+            <li>Accessing the first element of an array:  arr[0]</li>
+            <li>Accessing the second element of an array: arr[1]</li>
+        </p>
+        <img id="big" src="arrayinc.png" alt="">
+        <br><br>
+        <h1>Types of Array</h1> <br>
+        <p ><b>1. One – Dimensional Array</b><br>
+        </p>
+        <p>One-dimensional array is a data structure that stores a collection of elements of the same data type in a sequential manner. The elements in a one-dimensional array are accessed using an index that starts from zero and goes up to one less than the size of the array.</p>
+        <p><b>2. Multi-dimensional Array </b><br>
+        </p>
+        <p>A multi-dimensional array is an array that contains other arrays as its elements. In other words, it is an array of arrays. The most common type of multi-dimensional array is a two-dimensional array, which is often used to represent matrices or tables of data.</p>
+    <p id="parLeft">To declare 2D array, just write: <br> <br>
+        &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;int myArray[m][n];
+    </p><br>
+    <img id="makeBig" src="2dArray.png" alt=""> <br>
+    <p><b>3. Three – dimensional Array</b></p>
+    <p>A three-dimensional array, also known as a 3D array, is a data structure that consists of a collection of elements organized in a three-dimensional grid or matrix. It is similar to a two-dimensional array, but with an additional dimension.</p>
+    <p id="parleft"> To declare 3D array, just write; <br><br>
+        &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;int myArray[m][n][o];
+    </p>
+    <img id="makeBig" src="3dArray.png" alt=""> <br>
+
+    <h1>End of Lesson 3</h1>
+    
+    </div>
+    
+    <div class="btn-group">
+        <a href="../Lesson2/Lesson2.html" class="btn">Previous Lesson</a>
+        <a id="takeBtn" href="/Quiz/Quiz3/AttemptQ3.html" class="btn">Take a Quiz</a>
+        <a href="../Lesson4/Lesson4.html" class="btn">Next Lesson</a>
+    </div>
+</body>
+
+</html>

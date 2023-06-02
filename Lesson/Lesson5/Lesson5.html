@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Lesson5.css">
+    <title>Lesson 5</title>
+</head>
+<body>
+    <div>
+        <a href="../Lesson.html" class="back-btn">Back</a>
+    </div>
+
+    <div class="container">
+        <h1 id="lesson5">Lesson 5: Structures in C</h1>
+        <br><br>
+        <p>In the world of C programming, structures come to the rescue when you want to bring different data pieces together in a neat package. It's like putting together puzzle pieces that don't have to be the same shape or size. In this lesson, we'll dive into structures and learn how to create them, access their parts, handle arrays of structures, and even nest them within each other. Let's embark on our journey to structure mastery!</p>
+        <br> <br><br>
+        <h1>Defining Structures: Creating Your Custom Data Types</h1>
+        <p>Imagine you're a master architect, and structures are your blueprints. To define a structure, you'll use the struct keyword, followed by the structure's name and a list of its member variables enclosed in curly braces.</p>
+        <p id="marLef" style="color: red;">struct Employee {
+            <p id="marginLeft"style="color: red;" > char name[50];<br>
+                int age;<br>
+                float salary;
+            </p>
+            <p id="marLef" style="color: red;">};</p>
+            <p>In our case, we've designed a structure named Employee, which consists of three members: name, age, and salary.</p>
+        </p> <br><br>
+    <h1>Initializing Structures: Setting Up the Perfect Data Foundation</h1>
+    <p>Let's simplify the process of setting up structures by initializing them right from the start. It's like magically preparing everything before you even start building.</p>
+        <p id="marLef" style="color: red;">struct Employee emp = {"John", 25, 5000.0};</p>
+        <p>You can also initialize individual members using the member access operator.</p>
+        <p id="marLef">
+            struct Employee emp;<br>
+            emp.name = "John";<br>
+            emp.age = 25;<br>
+            emp.salary = 5000.0;
+        </p><br><br>
+        <h1>Arrays of Structures: Grouping Data for Efficient Management</h1>
+        <p>Imagine you're managing a group of employees, and you want to keep track of all their details. Arrays of structures come to the rescue!</p>
+        <p id="marLef">struct Employee employees[10];</p>
+        <p>In this example, we create an array called employees that can store up to 10 Employee records.</p>
+        <p>To access the members of individual structures in the array, you can use the index notation.</p>
+        <p id="marLef">employees[0].name = "John";<br>
+            employees[0].age = 25;<br>
+            employees[0].salary = 5000.0;</p> <br><br>
+
+            <h1>Nested Structures: Building Towers of Data</h1>
+            <p>Sometimes, you need to go beyond simple structures and create more complex entities. Nesting structures allows you to build towers of data, where one structure holds another structure inside it.</p>
+            <p id="marLef">struct Date {
+                <p id="marginLeft">    int day;<br>
+                    int month;<br>
+                    int year;</p>
+                    <p id="marLef">};</p>
+            </p>
+            <p id="marLef">struct Person {
+                <p id="marginLeft">    char name[50];<br>
+                    struct Date birthdate;</p>
+                    <p id="marLef">};</p>
+            </p>
+            <p>In this example, we have a structure called Person that contains a nested structure called Date. It's like having a box within a box!</p>
+            <p id="marLef">struct Person student;<br>
+                student.birthdate.day = 15;<br>
+                student.birthdate.month = 5;<br>
+                student.birthdate.year = 2000;</p>
+                    <br><br>
+                <h1>Passing Structures to Functions: Sharing Data for Collaborative Work</h1>
+                <p>Structures are meant to be shared! You can pass them to functions, either by copying their contents or by letting functions work directly with them using pointers.</p>
+                <p>Passing by value:</p>
+                <p id="marLef">void display(struct Employee emp) {
+                    <p id="marginLeft">printf("Name: %s\n", emp.name); <br>
+                        printf("Age: %d\n", emp.age);<br>
+                        printf("Salary: %.2f\n", emp.salary);</p>
+                        <p id="marLef">}<br> <br> <br>
+
+                            // Usage<br>
+                            display(emp);</p>
+                </p>
+                <p>Passing by value means that a copy of the structure is made and passed to the function. The display function takes an Employee structure as a parameter and prints its members.</p>
+                <p>Passing by reference:</p>
+                <p id="marLef">void increaseSalary(struct Employee *emp) {
+                    <p id="marginLeft">emp->salary *= 1.1; // Increase salary by 10%</p>
+                    <p id="marLef">} <br> <br>
+                        // Usage <br>
+                        increaseSalary(&emp);
+                    </p>
+                </p>
+                <p>Passing by reference means that instead of copying the structure, we pass a pointer to the structure to the function. The increaseSalary function takes a pointer to an Employee structure and modifies the salary member using the -> operator.</p>
+                <br><br><br>
+                <p>Structures serve as building blocks for organizing and managing data in your programs. They allow you to create custom data types, access their members, work with arrays of structures, nest them within each other, and even share them with functions. With this newfound knowledge, you're now equipped to tackle more complex data organization challenges in your C programming journey. Happy coding!</p>
+
+
+            </div>
+
+            <div class="btn-group">
+                <a href="../Lesson4/Lesson4.html" class="btn">Previous Lesson</a> 
+                <a id="takeBtn" href="/Quiz/Quiz5/AttemptQ5.html" class="btn">Take a Quiz</a>
+                <a href="../Lesson6/Lesson6.html" class="btn">Next Lesson</a>
+            </div>
+</body>
+</html>

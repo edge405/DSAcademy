@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Lesson6.css">
+    <title>Lesson 6</title>
+</head>
+<body> 
+    <div>
+        <a href="../Lesson.html" class="back-btn">Back</a>
+    </div>
+ <div class="container">
+    <h1 id="lesson6">Lesson 6: Dynamic Data Structure</h1>
+    <br><br><br>
+    <p id="center">The data structure is allowed to grow and shrinks as the demand for storage arises.</p>
+    <p id="center">When a program is being run, a dynamic data structure can expand or contract in size as necessary. Since memory is allocated dynamically during runtime, memory resources may be managed effectively.</p>
+    <p id="center">Dynamic data structures are adaptable and can change in size depending on the actual data being stored, as opposed to static data structures, which have a fixed size defined at compile-time. They are excellent for situations where the quantity of pieces or the size of the data cannot be predicted in advance or may change over time due to their dynamic resizing capabilities.</p>
+   <br><br>
+    <h1>Dynamic and Static Data Structures</h1>
+    <img id="makeBig2" src="dynamic.png" alt="">
+    <br><br>
+    <h1>Linked List</h1>
+    <p>An ordered set consisting of a variable number of elements or a collection of related records to which additions and deletions are made.</p>
+    <p>A linked list is a linear data structure consisting of a sequence of nodes, where each node contains a value and a reference (or pointer) to the next node in the list. Unlike arrays, linked lists do not store elements in contiguous memory locations. Instead, each node is allocated dynamically and connected to the next node through pointers.</p>
+    <br><br>
+    <h1>Singly Linked List</h1>
+    <p>
+    <li>It is the most basic type of linked list in C.</li>
+    <li>It is a simple sequence of dynamically allocated nodes.</li>
+    <li>Singly linked list has three types of nodes: First, Last, Intermediate</li>
+    <li>Each node has its successor and predecessor</li>
+    <li>First Node does not have a predecessor, while the last node does not have a successor</li>
+    <li>Last Node have successor reference as NULL</li>
+    <li>Accessing Singly Linked List is Unidirectional</li>
+    <li>Each node in the list stores the contents of the node and a pointer or reference to the next node in the list</li>
+    <li>We can have multiple data files inside a NODE, but there is a single link for the next NODE.</li>
+    <li>It does not store any pointer or reference to the previous node</li>
+    <li>It is called a singly linked list because each node only has a single link to the node</li>
+    <li>To store a single linked list, you only need to store a reference or pointer to the first node in that list</li>
+    <li>The last node has a pointer to nothingness to indicate that it is the last node.</li>
+    <br><br>
+</p>
+    <h1>Characteristics:</h1>
+    <p>
+        <li>Two successive nodes are linked together in a linear fashion</li>
+        <li>Each node contains the address of the next node to be followed</li>
+        <li>Only linear or forwards sequential movement is possible</li>
+        <li>Elements are accessed sequentially; no direct access is allowed</li>
+        <img id="makeBig2" src="char.png" alt="">
+    </p>
+    <br><br>
+    <h1>Terminologies:</h1>
+    <p>
+        <li>The next reference inside a node can be viewed as a linked or pointer to another node</li>
+        <li>The first and last node of a linked list usually are called the head and tail of the list, respectively, Thus, we can traverse the list starting at the head and ending at the tail. The tail node is a special node, where the next pointer is always pointing or linking to a null reference, indicating the end of the list.</li>
+        <li>Sentinel – a special dummy node at the beginning and/or at the end of the list, which is not used to store data.</li>
+    </p>
+    <br><br>
+    <h1>Implementation:</h1>
+    <p>
+        There are usually two forms of linked list: 
+        <li>Without a dummy head (refer to the top singly linked list in the following diagram), or</li>
+        <li>With a dummy head (bottom one). Dummy headers are often used because they help with the implementation.</li>
+        <img id="makeBig2" src="imp.png" alt="">
+    </p> <br><br>
+    <p id="parBig"><b>Basic Operations:</b></p>
+    <p>
+        <li>Create</li>
+        <li>Insert</li>
+        <li>Delete</li>
+        <li>Display</li>
+        <li>Search</li>
+    </p> <br><br>
+    <h1>Create a Linked List in C:</h1> <br>
+    <p><b>Step 1:</b> Declare the elements of the node</p>
+    <p id="marLef">struct node {
+        <p id="marginLeft">int data; <br>
+        struct node *next;</p>
+        <p id="marLef">};</p>
+        </p> <br><br>
+        <p><b>Step 2:</b> Declare needed pointers to point to node</p>
+        <p id="marLef">struct node *new_node, *head, *last, *cn;</p> <br><br>
+        <p><b>Step 3:</b> Create the node</p>
+        <p id="marLef">new_node=(struct node*)malloc(sizeof(struct node));</p> <br><br>
+        <h1>Insertion of the Head</h1> <br>
+        <p>Alorithm addFirst(string newData):</p>
+        <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; create a new node v containing newData</p>
+        <p id="marLef">v.next = head <br>
+            head = v <br>
+            size = size + 1;
+            <img id="makeBig2" src="insertionHead.png" alt="">
+        </p> <br><br>
+        <h1>Insertion at the Tail</h1> <br>
+        <p>Algorithm addLast(string newData):</p>
+        <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;create a new node v containing newData</p>
+        <p id="marLef">v.next = null <br>
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbspif (head == null) {  // list is empty <br>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;head = v <br>
+                &nbsp; &nbsp; &nbsp; &nbsp;} else {  // list is not empty <br>
+                    tail.next = v <br>
+                } <br>
+                tail = v <br>
+                size = size + 1
+        </p> <br> <br>
+        <h1>Deletion at the Head</h1><br>
+        <p>Algorithm removeFirst()</p>
+        <p id="marLef"> if (head == null) then <br> Indicate an error: the list is empty<br>
+
+            tmp = head<br>
+    
+            head = head.next<br>
+    
+            tmp.next = null<br>
+    
+            size = size - 1</p><br><br>
+        <h1>Traversing a Singly Linked List</h1> <br>
+        <p>Algorithm traverseList()
+            <p id="marLef">curNode = head<br>
+    
+            while (cureNode != null) {<br>
+    
+            // print out the contents of the current node<br>
+    
+            curNode = cureNode.next<br>
+        }</p>
+        <p>Search Operation</p>
+        <p id="marLef">Int list[list size];<br>
+
+            Void question(int key)
+            <br>
+            {<br>
+            
+            Int index = 0, found = 0;<br>
+            <p id="marginLeft">while(index < list size)<br>
+            
+                    {<br>
+            
+                        &nbsp; &nbsp; &nbsp; &nbsp;if(list[index] == key) {<br>
+            
+                            &nbsp; &nbsp; &nbsp; &nbsp;Found = 1; printf(“Found”); break;<br>
+            
+                    }<br>
+            
+                    Index = index + 1;<br>
+            
+                    }<br>
+            
+                    if (found == 0)<br>
+            
+                    &nbsp; &nbsp; &nbsp; &nbsp;printf(“Not Found!”);</p>
+                    
+            <p id="marLef">}</p>
+            </p>
+    
+    </p>
+<br><br>
+    <h1>Variations on Linked List:</h1> <br>
+    <li>Doubly-Linked List</li>
+    <li>Cyclic Lists</li> <br>
+    <p id="parBig"><b>Doubly-Linked List</b></p> <br>
+    <li>A traditional (singly-linked) list has just one link per node:</li>
+    <li>But this makes it infeasible to transverse the list backwards, such as one may need to do to remove a node. So doubly-linked nodes include two links per node</li>
+    <li>A Doubly-Linked List allows us to go in both directions – forwards and reverse.</li>
+    <li>Such list allow for a great variety of quick update operations, including insertion and removal at both ends, and in the middle.</li>
+    <li>A node in a doubly-linked list stores two references – a next link, which points to the next node in the list, and a prev link, which points to the previous node in the list.</li>
+    <img id="makeBig2" src="doubly.png" alt="">
+    <img id="makeBig2" src="doubly1.png" alt=""> <br><br>
+    <h1>Insertion</h1> <br>
+    <p>Algorithm removeLast():</p>
+    <p id="marLef">
+
+         &nbsp; &nbsp;v = trailer.prev // the current last node<br>
+        
+                if (v == header) then<br>
+        
+                Indicate an error: the list is empty<br>
+        
+                prev = v.prev<br>
+        
+                prev.next = trailer<br>
+        
+                trailer.prev = prev<br>
+        
+                v.prev = null<br>
+        
+                 &nbsp; &nbsp;v.next = null<br>
+        
+                 &nbsp; &nbsp; size- -</p> <br><br>
+                 <h1>Cyclic List</h1>
+                 <p>
+                    <li>A cyclic list is one in which the last node points back to the first one</li>
+                    <li>With a cyclic list, we don’t use null to terminate a list. We also don’t need a head field; we can use the tail field to find the head node.</li>
+                    <li>A circularly linked list is a special-linked list, which could be an extension of the singly or doubly linked lists we learned before. It also has many forms: with dummy head node or non-dummy hea node.</li>
+                 </p>
+                 <img src="cyclic.png" alt="" id="makeBig1">
+                 <p>There are three basic operations with the circularly linked list:
+                    <li><b>add(v):</b> Insert a new niode v immediately after the cursor; if the list is empty, then v becomes the cursor and its next pointer points to itself.</li>
+                    <li><b>remove():</b> Remove and return the node v immediately after the cursor (not the cursor itself, unless it is the only node); if the list becomes empty, the cursor is set to null.</li>
+                    <li><b>advance():</b> Advance the cursor to the next node in the list.</li>
+                 </p> <br><br>
+                 <h1>End of the Lesson</h1>
+</div>
+    
+ <div class="btn-group">
+    <a href="../Lesson5/Lesson5.html" class="btn">Previous Lesson</a> 
+    <a id="takeBtn" href="/Quiz/Quiz6/AttemptQ6.html" class="btn">Take a Quiz</a>
+    <a href="../Lesson7/Lesson7.html" class="btn">Next Lesson</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 8</title>
+    <link rel="stylesheet" href="Lesson9.css">
+</head>
+
+<body>
+    <div>
+        <a href="../Lesson.html" class="back-btn">Back</a>
+    </div>
+
+    <div class="container">
+        <h1 id="lesson9">Lesson 8 : Introduction to Trees</h1> <br><br>
+
+        <h1>What is trees?</h1>
+        <p>
+            <li>Trees are hierarchical structures composed of nodes connected by edges. Each node may have child nodes,
+                forming a branching structure. Trees are used to represent hierarchical relationships and provide
+                efficient searching, insertion, and deletion operations.</li>
+            <li>Lists, stacks, and queues are all linear structures: in all three data structures, one item follows
+                another. Trees will be our first non-linear structure:
+            </li>
+            <li>More than one item can follow another.</li>
+            <li>The number of items that follow can vary from one item to another.</li>
+        </p> <br>
+        <h1>Uses of Trees:</h1>
+        <p>
+            <li>representing family genealogies </li>
+            <li>as the underlying structure in decision-making algorithms</li>
+            <li>to represent priority queues (a special kind of tree called a heap)</li>
+            <li>to provide fast access to information in a database (a special kind of tree called a b-tree)</li>
+        </p> <br>
+        <h1> The Conceptual Picture of a Tree:</h1>
+        <img id="makeBig" src="pic1.png" alt="">
+        <p>
+            <li>each letter represents one <b>node</b></li>
+            <li>the arrows from one node to another are called <b>edges</b></li>
+            <li>the topmost node (with no incoming edges) is the <b>root</b> (node A) </li>
+            <li>the bottom nodes (with no outgoing edges) are the <b>leaves</b> (nodes D, I, G & J)</li>
+        </p> <br>
+        <h1>PATH</h1>
+        <img id="makeBig" src="path.png" alt="">
+        <p>
+            <li>path in a tree is a sequence of (zero or more) connected nodes.</li>
+            <li>For example, here are the three paths base on the picture.</li>
+            <img id="makeBig" src="path1.png" alt="">
+        </p> <br>
+        <h1>LENGTH</h1>
+        <p>
+            <li>The length of a path is the number of nodes in the path.</li>
+            <li>For example, the given path are;</li>
+            <img id="makeBig" src="length.png" alt="">
+            <li>Therefore the length are 3, 2, and 1.</li>
+        </p> <br>
+        <h1>HEIGHT</h1>
+        <p>The height of a tree is the length of the longest path from the root to a leaf; for the above example, the
+            height is 4 (because the longest path from the root to a leaf is A → C → E → G,
+            or A → C → E → J). An empty tree has height = 0.
+            <img id="makeBig" src="height.png" alt="">
+        </p> <br>
+        <h1>DEPTH</h1>
+        <img id="makeBig" src="Depth.png" alt="">
+        <p>
+            <li>The depth of a node is the length of the path from the </li>
+            <li>For example:</li>
+        <p id="willSmall">
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;the depth of J is 3 <br>
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;the depth of D is 2 <br>
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;the depth of A is 0
+        </p>
+        </p>
+
+        <p id="parBig"><b>Given two connected nodes like this:</b></p>
+        <p> <img id="makeSmall" src="node.png" alt="">
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            Node A is called the parent, and node B is called the child.</p>
+        <br>
+        <h1>SUBTREE </h1>
+        <p> <img id="makeBig" src="Subtree.png" alt="">
+        <p>A subtree of a given node includes one of its children and all of that child's descendants. The descendants
+            of a node N are all nodes reachable from N (N's children, its children's
+            children, etc.). In the original example,node
+        </p>
+        <p>A has three subtrees: </p>
+        <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1. B, D <br>
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;2. I <br>
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;3. C, E, F, G, J</p>
+        </p> <br>
+        <h1>BINARY TREE</h1>
+        <p>
+            <li>Each node has 0, 1, or 2 children.</li>
+            <li>Each child is either a left child or a right child.</li>
+        </p>
+        <p id="parBig">Two examples of binary trees that are different:
+            <img id="makeBig2" src="binarytree.png" alt="">
+        </p> <br>
+        <h1>BINARY SEARCH TREE</h1>
+        <p><b>Here are some properties of a Binary Search Tree;</b>
+            <li>The left subtree of a node contains only nodes with keys less than the node's key.</li>
+            <li>The right subtree of a node contains only nodes with keys greater than the node's key. </li>
+            <li>The left and right subtrees each must also be a binary search tree. </li>
+            <li>Each node can have up to two successor nodes. </li>
+            <li>There must be no duplicate nodes. </li>
+            <li>A unique path exists from the root to every other node. </li>
+        </p>
+        <img src="searchtree.png" alt="">
+        <br> <br>
+        <h1>BINARY SEARCH TREE OPERATIONS</h1> <br>
+        <p id="parBig"><b>Creating Binary Trees</b></p>
+        <p>&nbsp; &nbsp;&nbsp; &nbsp;struct binTree { <br>
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; int data; <br>
+            &nbsp; &nbsp; &nbsp; &nbsp;struct binTree * right, * left; <br>
+            &nbsp; &nbsp;&nbsp; &nbsp; };
+        </p> <br>
+        <p id="parBig"><b>Deleting Binary Trees</b></p>
+        <p>&nbsp; &nbsp;&nbsp; &nbsp;void deltree(node * tree) <br>
+            &nbsp; &nbsp;&nbsp; &nbsp; { <br>
+            &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; if(tree) { <br>
+            &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; deltree(tree->left); <br>
+            &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; deltree(tree->right); <br>
+            &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; free(tree); <br>
+            &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; } <br>
+            &nbsp; &nbsp;&nbsp; &nbsp;}
+        </p>
+        <p>The function deltree() goes to the bottom of
+            each part of the tree, that is, searching while there is a non-null node, deletes that leaf, and then it
+            works
+            its way back up.
+        </p> <br>
+        <p id="parBig"><b>Deleting Binary Trees</b>
+            <li>A BST is a connected structure. That is, all nodes in a tree are connected to some other node.</li>
+            <li>For example, each node has a parent, unless node is the root. Therefore deleting a node could affect all
+                sub trees of that node. </li>
+        </p> <br>
+        <p id="parBig"><b>Case 1 : The node to delete is a leaf node</b>
+        </p>
+        <img src="nodeToDelete13.png" alt="">
+        <p>This is a very easy case. Just delete the node. We are done.</p>
+        <p id="parBig"><b>Case 2 : The node to delete is a node with one child.</b>
+        </p>
+        <img src="nodeToDelete15.png" alt="">
+        <li>If the node to be deleted is a left child of the
+            parent, then we connect the left pointer of
+            the parent (of the deleted node) to the
+            single child.
+        </li>
+        <li>if the node to be deleted is a right child of
+            the parent, then we connect the right pointer
+            of the parent (of the deleted node) to single
+            Child
+        </li>
+        <br>
+        <p id="parBig"><b>Case 2 : The node to delete is a node with one child.</b></p>
+        <img src="nodeToDelete.png" alt="">
+        <li>If the node to be deleted is a left child of the
+            parent, then we connect the left pointer of
+            the parent (of the deleted node) to the
+            single child.
+        </li>
+        <li>if the node to be deleted is a right child of
+            the parent, then we connect the right pointer
+            of the parent (of the deleted node) to single
+            Child
+        </li>
+        <br>
+        <p id="parBig"><b>Case 3: The node to delete is a node with two children</b></p>
+        <p>
+            <img src="case3.png" alt="">
+            <li>First we find a replacement node (from leaf node or nodes with one child) for the node to be deleted.
+            </li>
+            <li>We need to do this while maintaining the BST order property. Then we swap leaf node or node with one
+                child with the node to be deleted (swap the data) and delete the leaf node or node with one child (case
+                1 or case2).</li>
+            <li>Next problem is finding a replacement leaf node for the node to be deleted. We can easily find this as
+                follows. </li>
+            <li>If the node to be deleted is N, then find the largest node in the left sub tree of N or the smallest
+                node in the right sub tree of N. These are two candidates that can replace the node to be deleted
+                without losing the order property. For example, consider
+                the following tree and suppose we need to delete the root 38.
+            </li>
+        </p>
+        <br>
+        <p id="parBig"><b>Case 3: The node to delete is a node with two children</b></p>
+        <p>
+            <img src="Case3.1.png" alt="">
+            <li>First we find a replacement node (from leaf node or nodes with one child) for the node to be deleted.
+            </li>
+            <li>We need to do this while maintaining the BST order property. Then we swap leaf node or node with one
+                child with the node to be deleted (swap the data) and delete the leaf node or node with one child (case
+                1 or case2) .</li>
+            <li>Next problem is finding a replacement leaf node for the node to be deleted. We can easily find this as
+                follows. </li>
+            <li>If the node to be deleted is N, then find the largest node in the left sub tree of N or the smallest
+                node in the right sub tree of N. These are two candidates that can replace the node to be deleted
+                without losing the order property. For example, consider
+                the following tree and suppose we need to delete the root 38.
+            </li>
+        </p> <br>
+        <p id="parBig"><b>Case 3: The node to delete is a node with two children</b></p>
+        <p>
+            <img src="case3.2.png" alt="">
+            <li>First we find a replacement node (from leaf node or nodes with one child) for the node to be deleted.
+            </li>
+            <li>We need to do this while maintaining the BST order property. Then we swap leaf node or node with one
+                child with the node to be deleted (swap the data) and delete the leaf node or node with one child (case
+                1 or case2) .</li>
+            <li>Next problem is finding a replacement leaf node for the node to be deleted. We can easily find this as
+                follows. </li>
+            <li>If the node to be deleted is N, then find the largest node in the left sub tree of N or the smallest
+                node in the right sub tree of N. These are two candidates that can replace the node to be deleted
+                without losing the order property. For example, consider
+                the following tree and suppose we need to delete the root 38.
+            </li>
+        </p> <br>
+        <h1>Inserting Into Binary Trees </h1>
+        <p id="marLef">void insert(node ** tree, int val){ <br>
+            &nbsp; &nbsp;&nbsp; &nbsp; node *temp = NULL; <br>
+            &nbsp; &nbsp;&nbsp; &nbsp; if(!(*tree)){ <br>
+            &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; temp = (node *)malloc(sizeof(node)); <br>
+            &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; temp->left = temp->right = NULL; <br>
+            &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; temp->data = val; <br>
+            &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; *tree = temp; <br>
+            &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; return; <br>
+            &nbsp; &nbsp;&nbsp; &nbsp;}
+            <br>
+            if(val < (*tree)->data){ <br>
+                &nbsp; &nbsp;&nbsp; &nbsp; insert(&(*tree)->left, val); <br>
+                &nbsp; &nbsp;&nbsp; &nbsp; } <br>
+                &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; else if(val > (*tree)->data){ <br>
+                &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; insert(&(*tree)->right, val); <br>
+                &nbsp; &nbsp;&nbsp; &nbsp; } <br>
+                } <br>
+                <li>The insert function searches, moving down the tree of children nodes, following the prescribed
+                    rules, left for a lower value to be inserted and right for a greater value, until it reaches a NULL
+                    node--an empty node--which it allocates memory for and initializes with the key value while setting
+                    the new node's child node pointers to NULL.</li>
+        </p> <br>
+        <h1>Searching the Binary Tree</h1>
+        <p id="marLef">node* search(node ** tree, int val){ <br>
+            &nbsp; &nbsp;&nbsp; &nbsp; if(!(*tree)){ <br>
+            &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; return NULL; <br>
+            &nbsp; &nbsp;&nbsp; &nbsp; } <br>
+            &nbsp; &nbsp;&nbsp; &nbsp; if(val < (*tree)->data){ <br>
+                &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; search(&((*tree)->left), val); <br>
+                &nbsp; &nbsp;&nbsp; &nbsp; }
+                &nbsp; &nbsp;&nbsp; &nbsp; else if(val > (*tree)->data){ <br>
+                &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; search(&((*tree)->right), val); <br>
+                &nbsp; &nbsp;&nbsp; &nbsp; } <br>
+                &nbsp; &nbsp;&nbsp; &nbsp; else if(val == (*tree)->data){ <br>
+                &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; return *tree; <br>
+                &nbsp; &nbsp;&nbsp; &nbsp;} <br>
+                } <br>
+                <li>The search function shown above recursively moves down the tree until it either reaches a node with
+                    a key value equal to the value for which the function is searching or until the function reaches an
+                    uninitialized node, meaning that the value being searched for is not stored in the binary tree. It
+                    returns a pointer to the node to the previous instance of the function which called it.</li>
+        </p> <br>
+        <h1>Sample Main Function</h1>
+        <p id="marLef">void main() <br>
+            { <br>
+            &nbsp; &nbsp;&nbsp; &nbsp;node *root; <br>
+            &nbsp; &nbsp;&nbsp; &nbsp;node *tmp; <br>
+            &nbsp; &nbsp;&nbsp; &nbsp;//int i; <br>
+            <br><br><br>
+            &nbsp; &nbsp;&nbsp; &nbsp;root = NULL; <br>
+            &nbsp; &nbsp;&nbsp; &nbsp;/* Inserting nodes into tree */ <br>
+            &nbsp; &nbsp;&nbsp; &nbsp;insert(&root, 9); <br>
+            &nbsp; &nbsp;&nbsp; &nbsp;insert(&root, 4); <br>
+            &nbsp; &nbsp;&nbsp; &nbsp;insert(&root, 15); <br>
+            &nbsp; &nbsp;&nbsp; &nbsp;insert(&root, 6); <br>
+            &nbsp; &nbsp;&nbsp; &nbsp;insert(&root, 12); <br>
+            &nbsp; &nbsp;&nbsp; &nbsp;insert(&root, 17); <br>
+            &nbsp; &nbsp;&nbsp; &nbsp;insert(&root, 2); <br>
+            &nbsp; &nbsp;&nbsp; &nbsp;/* Printing nodes of tree */ <br>
+            &nbsp; &nbsp;&nbsp; &nbsp;printf("Pre Order Display\n"); <br>
+            &nbsp; &nbsp;&nbsp; &nbsp;print_preorder(root); <br>
+            <br>
+            &nbsp; &nbsp;&nbsp; &nbsp;printf("In Order Display\n");<br>
+            &nbsp; &nbsp;&nbsp; &nbsp;print_inorder(root); <br>
+            <br>
+            &nbsp; &nbsp;&nbsp; &nbsp;printf("Post Order Display\n");<br>
+            &nbsp; &nbsp;&nbsp; &nbsp;print_postorder(root); <br><br><br><br>
+
+            &nbsp; &nbsp;&nbsp; &nbsp;/* Search node into tree */ <br>
+            &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;tmp = search(&root, 4); <br>
+            &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;if (tmp) <br>
+            &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;{ <br>
+            &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;printf("Searched node=%d\n",
+            tmp->data); <br>
+            &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;} <br>
+            &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;else <br>
+            &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;{ <br>
+            &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;printf("Data Not found in
+            tree.\n"); <br>
+            &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;} <br>
+            &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;/* Deleting all nodes of tree */ <br>
+            &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; deltree(root); <br>}
+        </p>
+
+        <h1>Binary Tree Traversal</h1> <br>
+        <p>
+            <li id="parBig"><b>Preorder</b></li>
+        <p id="marLef">
+            This can be summed up as; <br>
+            1. Visit the root node (generally output this) <br>
+            2. Traverse to left subtree <br>
+            3. Traverse to right subtree <br> <br>
+
+            F, B, A, D, C, E, G, I, H
+        </p>
+        <img src="BinaryTreeTraversal.png" alt="">
+        <p id="marLef">
+            void print_preorder(node * tree) <br>
+            { <br>
+            &nbsp; &nbsp;&nbsp; &nbsp;if (tree) <br>
+            &nbsp; &nbsp;&nbsp; &nbsp;{ <br>
+            &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;printf("%d\n",tree->data); <br>
+            &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;print_preorder(tree->left); <br>
+            &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;print_preorder(tree->right); <br>
+            &nbsp; &nbsp;&nbsp; &nbsp;} <br>
+            }
+        </p>
+        </p> <br>
+        <p>
+            <li id="parBig"><b>Inorder</b></li>
+        <p id="marLef">
+            1. Traverse to left subtree <br>
+            2. Visit root node (generally output this) <br>
+            3. Traverse to right subtree <br> <br>
+
+            Output: <br>
+            A, B, C, D, E, F, G, H, I
+        </p>
+        <img src="Inorder.png" alt="">
+        <p id="marLef">
+            void print_inorder(node * tree) <br>
+            { <br>
+            &nbsp; &nbsp;&nbsp; &nbsp;if (tree) <br>
+            &nbsp; &nbsp;&nbsp; &nbsp;{ <br>
+            &nbsp; &nbsp;&nbsp; &nbsp;print_inorder(tree->left); <br>
+            &nbsp; &nbsp;&nbsp; &nbsp;printf("%d\n",tree->data); <br>
+            &nbsp; &nbsp;&nbsp; &nbsp;print_inorder(tree->right); <br>
+            &nbsp; &nbsp;&nbsp; &nbsp;} <br>
+            }
+        </p> <br>
+        <li id="parBig"><b>Post-order</b></li>
+        <p id="marLef">
+            1. Traverse to left subtree <br>
+            2. Traverse to right subtree <br>
+            3. Visit root node <br>
+            (generally output this) <br><br>
+            And outputs the following: <br>
+            A, C, E, D, B, H, I, G, F
+        </p>
+        <img src="postOrder.png" alt="">
+        <p id="marLef">
+            void print_postorder(node * tree) { <br>
+            &nbsp; &nbsp;&nbsp;if (tree) <br>
+            &nbsp; &nbsp;&nbsp;{ <br>
+            &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;print_postorder(tree->left); <br>
+            &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;print_postorder(tree->right); <br>
+            &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;printf("%d\n",tree->data); <br>
+            &nbsp; &nbsp;&nbsp;} <br>
+            }<br>
+        </p>
+        </p> <br> <br>
+        <h1>EXPRESSION TREES</h1> <br>
+        <p><b>Expression </b></p>
+        <p><li>A sequence of symbols is an expression if it has one of the following forms: </li>
+        <p id="marLef">
+            1. An integer constant <br>
+2. A variable name <br>
+3. An expression enclosed in parentheses <br>
+4. A sequence of two expressions separated by an operator<br>
+            <li>To see how you might apply this recursive definition, consider the following sequence of symbols: </li>
+        </p>
+        <p id="marLef">y = 3 * (x + 1)</p>
+        <img src="expression.png" alt="">
+        </p>
+        <p>
+            <li>To see how you might apply this recursive definition, consider the following sequence of symbols: </li>
+            <p id="marLef">
+                y = 3 * (x + 1)
+            </p>
+            <img src="exp1.png" alt="">
+        </p>
+        <p>
+            <li>The parenthesized quantity can now be identified as an expression according to rule #3, which results in the following diagram: </li>
+            <p id="marLef">y = 3 * (x + 1)</p>
+            <img src="exp2.png" alt="">
+        </p>
+        <p>
+            <li>By applying rule #4 two more times to take care of the remaining operators, you can show that the entire set of characters is indeed an expression, as follows: </li>
+            <p id="marLef">y = 3 * (x + 1)</p>
+            <img src="exp3.png" alt="">
+        </p>
+        <p>
+            <li>to simplify a complete parse tree: an abstract structure called an expression tree that is more appropriate to the evaluation phase. </li>
+            <img  src="parseTree.png" alt="">
+        </p>
+        <p>
+            <li>to simplify a complete parse tree: an abstract structure called an expression tree that is more appropriate to the evaluation phase. </li>
+            <img src="exp4.png" alt="">
+            <li>In the binary search tree, every node had the same structure. </li>
+            <li>In an expression tree, there are three different types of nodes, as follows: </li>
+            <p id="marLef1">1. Integer nodes <br>
+                2. Identifier nodes <br>
+                3. Compound nodes</p>
+        </p>
+        <br><br><br>
+        <p><i>Example 1: </i>Tree representing the expression a/b+(c-d)e.   
+        <img id="makeBig2" src="Example1.png" alt="">
+
+            <li id="marLef">INFIX = INORDER </li> 
+            <li id="marLef">  PREFIX = PREORDER </li> 
+            <li id="marLef">  POSTFIX = POSTORDER
+                </li>
+        </p> <br><br>
+        <p><i>Example 2: </i>Problem: (35-(3*(3+2)))/4 
+            <li>Step 1: How to build a tree given an expression? </li>
+            <li>see if how many terms are involved: In this case, it’s 2: (35-(3*(3+2))) and 4 </li>
+            <li>What operation is in between the terms? / </li>
+            <li>In the first term, see how many expressions are involved….</li>
+        </p>
+        <p><i>Example 2: </i>Solution: <br>
+        <li>Step 1: Create the Tree </li>
+        <p>(35-(3*(3+2)))/4</p>
+        <img src="Ex2sol.png" alt="">
+        </p>
+        <p><i>Example 2:</i>
+            <li>
+            Step 2: Postfix Notation (35-3*(3+2))/4 </li>
+            <li>Get The postfix notation of the tree </li>
+            <li>POSTFIX: 35 3 3 2 + * - 4 /</li>
+            <img src="ex2.png" alt="">
+            </p> <br><br>
+
+            <p ><b><h1>Why did we do all this?</h1> </b>
+            <li>Parsing is an integral part of compilation
+                </li>
+                <p>=> We only explored a small part of parsing (expressions) </p>
+                <li>Parsing and trees are intimately related 
+                </li>
+                <p>=> The result of parsing a program is a tree</p>
+                <li>The output of a compiler is executable code 
+                </li>
+                <p>=> Parsing is a pre-requisite step to generating executable code</p>
+            </p> <br>
+            <p> <h1><b>Postfix expressions are evaluated using a stack:</b> </h1>
+                
+                <li>A postfix expression is read from left to right. </li>
+                <li>Every operand is pushed on the stack. </li>
+                <li>When an operator is encountered, it is applied to the top two operands on the stack. </li>
+                <li>The result of the operation is pushed back on the stack </li>
+                <p>=> The stack only contains numbers</p>
+            </p> <br><br><br>
+            <p> <b><i>Example 2: </i>Step 3: stack </b>
+                <li>Initially the stack is empty:</li>
+                <img src="ex2Stack.png" alt="">
+                <li>The first four operands get pushed on the stack:</li>
+                <img src="ex2pic.png" alt="">
+                <li>Then, the operator + is applied to the top two operands (3 and 2)</li>
+                <img src="then.png" alt="">
+                <li>Next, the operator * is applied to 5 and 3:</li>
+                <img src="next.png" alt="">
+                <li>The operator - is applied to 15 and 35 (as 35-15)</li>
+                <img src="the opt.png" alt="">
+                <li>The operand 4 is pushed on the stack:</li>
+                <img src="the opt 4.png" alt="">
+                <li>The operator / is processed:</li>
+                <img src="theoptprocessed.png" alt="">
+            </p> <br><br>
+            <p id="parBig"> <b>Why is this useful? </b>
+            </p>
+            <p>  First, let's list the stack operations in the order they were used in the previous example: 
+                
+                <li id="marLef">push 35 </li>
+                <li id="marLef">push 3 </li>
+                <li id="marLef">push 3 </li>
+                <li id="marLef">push 2 </li>
+                <li id="marLef">add </li>
+                <li id="marLef">mult </li>
+                <li id="marLef">sub </li>
+                <li id="marLef">push 4 </li>
+                <li id="marLef">divide </li>
+
+                <p>We can think of these as instructions for operating a stack-based calculator.</p>
+            </p> <br><br>
+             <h1>HEAPS</h1> <br>
+             <img id="makeBig1" src="heaps.png" alt=""> <br>
+
+             <h1>COMPLETE TREE</h1>
+             <p>Is one in which there are no gaps between leaves. For instance, a
+                Tree with a root node that has only one child must have its child as the left node. More precisely, a complete tree is one that has every level filled in before adding a node to the next level, and one that has the nodes in a given level filled in from left to right, with no breaks.
+                <img id="makeBig2" src="completTree.png" alt="">
+                <p>Heaps are based on the notion of a complete tree, for which we gave an 
+                    informal definition</p>
+                </p>
+                <h1>HEAPS</h1>
+                <p>
+                    <li id="listBig"><b>A binary tree has the heap property if</b></li>
+                    <p>a. it is empty or <br>
+                    b. the key in the root is larger or smaller than that in either child and both subtrees have the heap property. </p>
+                    <li id="listBig"><b>A binary heap is a complete binary tree which satisfies the heap ordering property. The ordering can be one of two types:</b> </li>
+                    <p>a.	the min-heap property: the value of each node is greater than or equal to the value of its parent, with the minimum-value element at the root. <br>
+                    b.	the max-heap property: the value of each node is less than or equal to the value of its parent, with the maximum-value element at the root. </p>
+                </p> <br>
+                <h1>MIN- HEAP / MAX HEAP</h1>
+                <img id="makeBig2" src="minMaxHeap.png" alt="">
+                <br>
+                <h1>HEAPS</h1>
+                <li>A HEAP CAN BE USED AS A PRIORITY QUEUE: THE HIGHEST PRIORITY ITEM IS AT THE ROOT AND IS TRIVIALLY EXTRACTED. BUT IF THE ROOT IS DELETED, WE ARE LEFT WITH TWO SUB-TREES AND WE MUST EFFICIENTLY RECREATE A SINGLE TREE WITH THE HEAP PROPERTY. </li>
+                <li>THE VALUE OF THE HEAP STRUCTURE IS THAT WE CAN BOTH EXTRACT THE HIGHEST PRIORITY ITEM AND INSERT A NEW ONE IN <b>O(LOGN)</b> TIME.</li>
+                <br> <br>
+                <h1>OPERATIONS</h1> <br><br>
+
+                <p id="parBig"> <center>
+                    <b>DELETE</b></center><br>
+                    <img src="delete.png" alt="">
+                    <p><li id="marLef1">A DELETION WILL 
+                        REMOVE THE NODE 
+                        AT THE ROOT
+                        </li></p> <br>
+                        <img src="delete1.png" alt="">
+                        <p><li>TO WORK OUT HOW WE'RE GOING TO MAINTAIN THE HEAP PROPERTY, USE THE FACT THAT A COMPLETE TREE IS FILLED FROM THE LEFT. SO THAT THE POSITION WHICH MUST BECOME EMPTY IS THE ONE OCCUPIED BY THE M. PUT IT IN THE VACANT ROOT POSITION.</li></p>
+                        <br>
+                        <img src="delete2.png" alt="">
+                        <p><li>THIS HAS VIOLATED THE </li>
+                        <li>THIS HAS VIOLATED THE CONDITION THAT THE ROOT MUST BE GREATER THAN EACH OF ITS CHILDREN, SO INTERCHANGE THE M WITH THE LARGER OF ITS CHILDREN</li>
+                        </p> <br>
+                        <img src="delete3.png" alt="">
+                        <p><li>THE LEFT SUBTREE HAS NOW LOST THE HEAP PROPERTY. </li>
+                        <li>SO AGAIN INTERCHANGE THE M WITH THE LARGER OF ITS CHILDREN.</li>
+                        </p>
+                    </p> <br><br><br>
+                    <h1>ADDITION</h1> <br>
+                    <p>
+                        <img src="Addition.png" alt="">
+                        <li>SO AGAIN INTERCHANGE THE M WITH THE LARGER OF ITS CHILDREN.</li>
+                    </p> <br><br><br>
+                    <h1>
+                        STORAGE OF COMPLETE TREES
+                    </h1> 
+                    <img id="makeBig2" src="StorageOfCompleteTrees.png" alt="">
+
+                    <p> <br><br><br><br>
+                        <h1>EXAMPLE 1</h1>
+                        <img id="makeBig1" src="examp1.png" alt="">
+                    </p>
+                    <p><br><br><br><br>
+                        <h1>EXAMPLE 2</h1>
+                        <img id="makeBig1" src="examp2.png" alt="">
+                    </p> <br><br><br>
+                    <h1>End of Lesson</h1>
+            </div>
+
+
+
+
+    <div class="btn-group">
+        <a href="../Lesson7/Lesson7.html" class="btn">Previous Lesson</a>
+        <a id="takeBtn" href="/Quiz/Quiz9/AttemptQ9.html" class="btn">Take a Quiz</a>
+    </div>
+</body>
+
+</html>

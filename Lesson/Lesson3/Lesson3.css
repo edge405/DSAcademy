@@ -1,0 +1,161 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: black;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+}
+.container{
+  padding: 0rem 13rem;
+}
+
+/*back button*/
+.back-btn {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 50px;
+  font-size: 20px;
+  margin: 15px 0px 0px 15px;
+  display: inline-block;
+  padding: 8px 15px;
+  background-color: #2a2a2a;
+  border: 2px solid #00ffff;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: #00ffff;
+  color: #1c1c1c;
+  box-shadow: 0px 0px 8px #00ffff;
+}
+/*back button*/
+#lesson3{
+  margin-bottom: 50px;
+  font-size: 40px;
+}
+#marginLeft{
+  margin-left: 60px;
+}
+h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+#center{
+  text-align: center;
+}
+
+p {
+  font-size: 16px;
+}
+.no-break{
+  white-space: nowrap;
+}
+#parLeft{
+  margin-left: 50px;
+}
+#big{
+  height: 30vh;
+  width: 80%;
+}
+#makeBig{
+  height: 50vh;
+  width: 80%;
+}
+#makeBig1{
+  height: 70vh;
+  width: 80%;
+}
+#willSmall{
+  font-size: 20px;
+}
+
+/*For navigational button bottom*/
+.btn-group {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.btn {
+  font-size: 17px;
+  margin: 100px 20px 20px 20px;
+  display: inline-block;
+  padding: 15px 25px;
+  background-color: #2a2a2a;
+  border: 2px solid #00ffff;
+  color: #fff;
+  text-align: center;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+#takeBtn{
+margin-left: 450px;
+margin-right: 450px;
+}
+
+.btn:hover {
+  background-color: #00ffff;
+  color: #1c1c1c;
+  box-shadow: 0px 0px 8px #00ffff;
+}
+/*For navigational button bottom*/
+
+ul {
+  margin-bottom: 5px;
+  font-size: x-small;
+}
+
+li {
+  margin-bottom: 3px;
+  font-size: xx-small;
+}
+span{
+  color: red;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+
+@media screen and (max-width: 768px) {
+  .container{
+    padding: 30px 10px;
+  }
+  .back-btn {
+    margin: 10px auto;
+    font-size: 16px;
+    width: 70px;
+    padding: 8px 16px;
+  }
+  .btn-group {
+    flex-direction: row;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .btn {
+    margin: 10px;
+    padding: 10px 20px;
+    height: 30px;
+    width: 95px;
+  }
+  
+  #takeBtn {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}

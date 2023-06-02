@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Lesson7.css">
+    <title>Lesson 7</title>
+</head>
+<body>
+    <div>
+        <a href="../Lesson.html" class="back-btn">Back</a>
+    </div>
+    
+    <div class="container">
+        <h1 id="lesson7">Lesson 7: Stacks and Queues</h1>
+        <br><br><br>
+        <h1>STACKS</h1>
+        <p><li id="marLef">Stack is a specialized data storage structure (Abstract data type).  </li>
+            <li id="marLef">Access of elements in a stack is restricted. </li>
+            <li id="marLef">It has two main functions: push and pop.  </li>
+            <li id="marLef">Insertion in a stack is done using push function and removal from a stack is done using pop function.</li>
+        </p> <br>
+        <center>
+    <p>Stack allows access to only the last element inserted hence, an item can be 	inserted or removed from the stack from one end called the top of the stack. It is 	therefore, also called <b>Last-In-First-Out (LIFO)</b> list. </p>
+</center> <br><br>
+    <p id="parBig"><b id="toWhite">Fields:</b></p>
+    <p><b>Capacity - </b>stands for the maximum number of elements stack can hold <br>
+    <b>Size - </b>  stands for the current size of the stack <br>
+    <b>Elements - </b>is the array of elements.
+    </p> <br><br>
+    <h1>FUNCTIONS</h1>
+    <p>
+        <li><b>createStack function – </b>This function takes the maximum number of elements (maxElements) the stack can hold as an argument, creates a stack according to it and returns a pointer to the stack. It initializes Stack S using malloc function and its properties. </li>
+        <li><b>push function - </b>This function takes the pointer to the top of the stack S and the item (element) to be inserted as arguments. Check for the emptiness of stack </li>
+        <li><b>pop function - </b>This function takes the pointer to the top of the stack S as an argument. </li>
+        <li><b>top function - </b>This function takes the pointer to the top of the stack S as an argument and returns the topmost element of the stack S.</li>
+        <br><br>
+        <h1>PROPERTIES OF STACKS</h1>
+        <p>
+             Each function runs in O(1) time. <br>
+             It has two basic implementations <br>
+            <li id="marLef">Array-based implementation – It is simple and efficient but the maximum size of the stack is fixed. </li>
+            <li id="marLef">Singly Linked List-based implementation – It’s complicated but there is no limit on the stack size, it is subjected to the available memory.</li>
+            <img id="makeBig2" src="Stack&Queues.png" alt="">
+        </p> <br><br>
+        <h1>Summary</h1>
+        <p>
+            <li id="marLef">A <b><i>stack</i></b> is an ordered list in which all insertions and deletions are made at one end, called the <b><i>top.</i></b> </li>
+            <li id="marLef">Given a stack S=(a[1],a[2],.......a[n]) then we say that a1 is the bottommost element and element a[i] is on top of element a[i-1], 1 < i < = n. </li>
+            <li id="marLef">The restrictions on a stack imply that if the elements A,B,C,D,E are added to the stack, in that order, then the first element to be removed/deleted must be E. Equivalently we say that the last element to be inserted into the stack will be the first to be removed. For this reason stacks are sometimes referred to as <b><i>Last In First Out (LIFO)</i></b> lists.</li>
+        </p>
+<br><br>
+        <p>
+            <h1>QUEUES</h1>
+            <li id="marLef">Queues are dynamic collections which have some concept of order. This can be either based on order of entry into the queue - giving us <b>First-In-FirstOut (FIFO)</b> which can be built with linked lists: </li>
+            <li id="marLef">The time needed to add or delete an item is constant and <b><i>independent of the number of items in the queue</i></b>. Thus we class both addition and deletion as an <b>O(1)</b> operation.</li>
+        </p>
+    </p>
+<br><br>
+    <h1>Algorithm:</h1>
+    <img id="makeBig2" src="algo.png" alt="">
+    <br><br><br>
+    <h1>End of the Lesson</h1>
+    </div>
+
+
+    <div class="btn-group">
+        <a href="../Lesson6/Lesson6.html" class="btn">Previous Lesson</a> 
+        <a id="takeBtn" href="/Quiz/Quiz7/AttemptQ7.html" class="btn">Take a Quiz</a>
+        <a href="../Lesson9/Lesson9.html" class="btn">Next Lesson</a>
+    </div>
+
+</body>
+</html>

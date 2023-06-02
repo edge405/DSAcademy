@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Lesson4.css">
+    <title>Lesson 4</title>
+</head>
+<body>
+    <div>
+        <a href="../Lesson.html" class="back-btn">Back</a>
+    </div>
+    <div class="container">
+        <h1 class="lesson4"></h1>
+        <p>Every variable is a memory location and every memory location has its address defined which can be accessed using ampersand (&) operator, which denotes an address in memory. A pointer is a variable whose value is the address of another variable. In the C programming language, pointers are a powerful feature that allows programmers to manipulate memory directly, enabling them to create more efficient and flexible code.</p>
+        <br>
+        <p>The general form of a pointer variable declaration is: <br>
+        <img id="makeBig2" src="pointer.png" alt="">
+        </p> <br><br>
+        <p>Pointer declaration:</p>
+        <p id="red">int *ip; /* pointer to an integer */<br>
+
+            double *dp; /* pointer to a double */<br>
+            
+            float *fp; /* pointer to a float */<br>
+            
+            char *ch /* pointer to a character */</p> <br>
+            <p>The actual data type of the value of all pointers, whether integer, float, character, or otherwise, is the same, a long hexadecimal number that represents a memory address. The only difference between pointers of different data types is the data type of the variable or constant that the pointer points to.</p>
+            <br> <h1>How to use Pointers?</h1>
+            <p>(a) We define a pointer variable  <br>
+
+                (b) Assign the address of a variable to a pointer and <br>
+                
+                (c) Access the value at the address available in the pointer variable.</p>
+                <p>This is done by using unary operator * that returns the value of the variable located at the address specified by its operand.</p> <br><br>
+                <p>The following example makes use of these operations:</p>
+                <p id="red">#include <stdio.h><br>
+
+                    int main ()<br>
+                    
+                    {
+                    <p id="marLef">int var = 20; /* actual variable declaration */<br>
+                    
+                        int *ip; /* pointer variable declaration */<br>
+                        
+                        ip = &var; /* store address of var in pointer variable*/<br>
+                        
+                        printf("Address of var variable: %x\n", &var ); /* address stored in pointer variable */<br>
+                        
+                        printf("Address stored in ip variable: %x\n", ip ); /* access the value using the pointer */<br>
+                        
+                        printf("Value of *ip variable: %d\n", *ip );<br>
+                        
+                        return 0;
+                        
+                        </p>
+                    <p id="red">}</p>
+                </p>
+                <p>Output:</p>
+                <p id="marLef">
+                    Address of var variable: bffd8b3c   <br>
+
+                    Address stored in ip variable: bffd8b3c <br>
+
+                    Value of *ip variable: 20   
+                </p> <br> <br>
+                    <h1>NULL Pointers in C</h1>
+                    <p>A pointer that is assigned NULL is called a null pointer. The NULL pointer is a constant with a value of zero defined in several standard libraries.</p>
+                <p><i>Example:</i> <br>
+                    <p id="red">#include <stdio.h> <br>
+                        int main () <br>
+            
+                        {
+                    </p>
+                    
+            <p id="marLef">int *ptr = NULL; <br>
+            
+            printf("The value of ptr is : %x\n", ptr );<br>
+            
+            return 0;</p>
+            <p id="red">}</p>
+            </p>
+            <p>Output:</p>
+            <p id="red">The value of ptr is 0.</p>
+            <p><i>Note: if a pointer contains the null (zero) value, it is assumed to point to nothing.</i></p>
+            <br><br>
+            <h1>Function call by reference in C</h1>
+            <p>The call by reference method of passing arguments to a function copies the address of an argument into the formal parameter. Inside the function, the address is used to access the actual argument used in the call. It means the changes made to the parameter affect the passed argument.</p>
+            <br><br>
+            <h1>Pointer to Pointer</h1> <p>A pointer can point to another pointer (which means it can store the address of another pointer), such pointers are known as double pointer OR pointer to pointer.</p>
+         <p><i>Example:</i></p>
+         <p id="red">int num = 5;<br>
+
+            int *ptr1 = #<br>
+            
+            int **ptr2 = &ptr1;</p>
+            <p><i>Note: This assigns the memory address of the pointer "ptr1" to the pointer "ptr2". The pointer "ptr2" is now a pointer to the pointer "ptr1".</i></p>
+            <h1>Passing pointers to function</h1> <p>Pointers can also be passed as an argument to a function, using this feature a function can be called by reference as well as an array can be passed to a function while calling.</p>
+            <br><br> <h1>Function pointers</h1> <p>A function pointer is just like another pointer, it is used for storing the address of a function. Function pointer can also be used for calling a function in C program.</p>
+        </div>
+
+        <a href="../Lesson3/Lesson3.html" class="btn">Previous Lesson</a>
+        <a id="takeBtn" href="/Quiz/Quiz4/AttemptQ4.html" class="btn">Take a Quiz</a>
+        <a href="../Lesson5/Lesson5.html" class="btn">Next Lesson</a>
+</body>
+</html>

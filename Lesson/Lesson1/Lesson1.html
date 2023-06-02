@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 1</title>
+    <link rel="stylesheet" href="Lesson1.css">
+</head>
+
+<body>
+    <div>
+        <a href="../Lesson.html" class="back-btn">Back</a>
+    </div>
+    <div class="container">
+        <h1 id="lesson1">Lesson 1 : Introduction to Data Structure</h1>
+        <p> The term "data structure" is used to describe the way data is stored and the term "algorithm" is used to
+            describe the way data is processed. Data structures and algorithms are interrelated. Choosing a data
+            structure
+            affects the kind of algorithm you might use, and choosing an algorithm affects the data structures we use.
+        </p>
+        <p> An algorithm is a finite sequence of instructions, each of which has a precise meaning and can be performed
+            with a limited amount of effort in a finite length of time. No matter what the input values may be, an
+            algorithm
+            terminates after executing a finite number of instructions.
+        </p>
+        <p>A data structure is a representation of a logical relationship existing between individual elements of data.
+            In other words, a data structure defines a way of organizing all data items that consider not only the
+            elements
+            stored but also their relationship to each other. The term "data structure" is used to describe the way data
+            is stored.
+        </p>
+        <p>To develop a program for an algorithm, we should select an appropriate data structure for that algorithm.
+            Therefore, the data structure is represented as:
+            <br>
+        <p id="center"><i>Algorithm + data structure = program</i></p>
+        <br><br>
+        </p>
+        <h1>Linear Data Structure</h1>
+        <p>A data structure is said to be linear if its elements form a sequence or a linear list. Linear data
+            structures like arrays, stacks, queues, and linked lists organize data in linear order.</p>
+        <h1>Non-Linear Data Structure</h1>
+        <p>A data structure is said to be non-linear if its elements form a hierarchical classification where data items
+            appear at various levels. Trees and graphs are widely used non-linear data structures. Tree and graph
+            structures represent hierarchical relationships between individual data elements. Graphs are nothing but
+            trees with certain restrictions removed.
+        </p>
+        <ul>Data structures are divided into two types:
+            <li>Primitive data structures </li>
+            <li> data structures</li>
+        </ul>
+        <h1>Primitive Data Structures</h1>
+        <p>Primitive data structures are the basic data structures that directly operate on machine instructions. They
+            have different representations on different computers. Integers, floating point numbers, character
+            constants, string constants, and pointers come under this category</p>
+        <h1>Non-primitive data structures</h1>
+        <p>Non-primitive data structures are more complicated data structures and are derived from primitive data
+            structures. They emphasize grouping the same or different data items with a relationship between each data
+            item. Arrays, lists, and files come under this category.</p>
+        <img id="makeBig" src="primitive&&Not.png" alt=""> <br>
+        <h1>Abstract Data Type</h1>
+        <p>An abstract data type, sometimes abbreviated ADT, is a logical description of how we view the data and the
+            operations allowed without regard to how they will be implemented. This means that we are concerned only
+            with what the data represents and not with how it will eventually be constructed. By providing this level of
+            abstraction, we are creating an encapsulation around the data. The idea is that by encapsulating the details
+            of the implementation, we are hiding them from the user’s view. This is called "information hiding." The
+            implementation of an abstract data type, often referred to as a "data structure," will require that we
+            provide a physical view of the data using some collection of programming constructs and primitive data
+            types. </p>
+        <img src="ABSTRACTdataType.png" alt=""><br>
+        <h1>Algorithm</h1>
+        <p>An algorithm is a finite sequence of instructions, each of which has a precise meaning and can be performed
+            with a limited amount of effort in a finite length of time. No matter what the input values may be, an
+            algorithm terminates after executing a finite number of instructions. </p>
+        <p id="marginLeft">In addition, every algorithm must satisfy the following criteria:</p>
+        <p><b>Input:</b> there are zero or more quantities, which are externally supplied;<br>
+            <b>Output:</b> at least one quantity is produced;<br>
+            <b>Definiteness:</b> each instruction must be unambiguous;<br>
+            <b>Finiteness:</b> if we trace out the instructions of an algorithm, then in all cases, the algorithm will
+            terminate after a finite number of steps;<br>
+        <b>Effectiveness:</b> every instruction must be sufficiently basic that it can in principle be carried out by a
+            person using only pencil and paper. It is not enough that each operation be definite; it must also be
+            feasible.</p><br>
+            <h1>Algorithm Analysis</h1>
+            <p>The efficiency of an algorithm can be analyzed at two different stages, before implementation, and after implementation. They are the following:
+                <li><b>Performance measurement, or Apostoriori Analysis:</b> involves implementing the algorithm in a machine and then calculating the time taken by the system to execute the program successfully.</li>
+                <li><b>Performance Evaluation or Apriori Analysis:</b> Before implementing the algorithm in a system.</li>
+            </p><br>
+            <h1>Algorithm Complexity</h1>
+            <p>Suppose X is an algorithm and n is the size of the input data, the time and space used by the algorithm X are the two main factors, which decide the efficiency of X.</p>
+            <p><b>Time Complexity:</b><br><br> The amount of time required for an algorithm to complete its execution is its time complexity. An algorithm is said to be efficient if it takes the minimum (reasonable) amount of time to complete its execution.</p>
+            <p><b>Space Complexity:</b><br><br> The amount of space occupied by an algorithm is known as Space Complexity. An algorithm is said to be efficient if it occupies less space and required the minimum amount of time to complete its execution. <br>The complexity of an algorithm f(n) gives the running time and/or the storage space required by the algorithm in terms of n as the size of input data.</p><br>
+
+            <h1>Growth of Functions <br>
+                (Asymptotic Analysis)</h1>
+                <p><b><i>How to analyze an Algorithm</i></b><br><br>Let us form an algorithm for Insertion sort.</p>
+                <p>Pseudo code:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Longest time <br><br>
+
+                    for j=1 to A[max]----------------------------------------------n-1<br>
+                    &nbsp; &nbsp; &nbsp; &nbsp; key=A[j]----------------------------------------------1<br>
+                    &nbsp; &nbsp; &nbsp; &nbsp; //Insert A[j] into sorted Array A[1.....j-1]------------0<br>
+                    &nbsp; &nbsp; &nbsp; &nbsp; i=j-1-----------------------------------------------------------1<br>
+                    &nbsp; &nbsp; &nbsp; &nbsp; while i>=0 & A[i]>key-----------------------------------n<br>
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; A[i+1]=A[i]----------------------------------------------1<br>
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; i=i-1----------------------------------------------------1<br>
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; A[i+1]=key----------------------------------------------1</p>
+                    
+                    <p><b>Best case:</b><br>It occurs when Array is sorted. <br> T(n) = (n-1)(1+0+1+1)</p>
+                    <p><b>Worst case:</b><br> It occurs when Array is reverse sorted. <br>T(n) = ((n-1)(1+0+1))(n(1+1+1))</p><br>
+
+                    <p><b>Why do we concentrate on worst-case running time?</b>
+                    <li>The worst-case running time gives a guaranteed upper bound on the running time for any input.</li>
+                    <li>For some algorithms, the worst case occurs often. For example, when searching, the worst case often occurs when the item being searched for is not present, and searches for absent items may be frequent.</li>
+                    </p><br>
+                    <p><b>Order of Growth</b>
+                        <li>It is described by the highest degree term of the formula for running time.</li>
+                        <li>(Drop lower-order terms. Ignore the constant coefficient in the leading term.)</li>
+                    </p><br>
+                    <p>Example: We found out that for insertion sort the worst-case running time is of the form
+                        <p>T(n) = ((n-1)(1+0+1))(n(1+1+1)) <br>
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;= ((n-1)(2))(3n)<br>
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=(2n-2)(3n)<br>
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=6n2-6n
+                        </p>
+                        <p class="no-break">Drop lower-order terms, constant coefficients, and constants. What remains is <span style="color: red;">n2</span>.
+                        <li>Thus, the Worst case running time is n2  (quadratic).</li>
+                        <li>But we cannot say that the worst-case running time T(n) equals n2, rather, it grows like n2. But it doesn’t equal n2.</li>
+                        <li>We say that the running time is Θ (n2) to capture the notion that the order of growth is n2.</li>
+                        <li>We usually consider one algorithm to be more efficient than another if its worst-case running time has a smaller order of growth.</li>
+                        </p>
+                        </p>
+                        <br>
+                        <h1>Asymptotic Notation</h1>
+                        <p>
+                            <li>Asymptotic notations are the mathematical notations used to describe the running time of an algorithm when the input tends towards a particular value or a limiting value.</li>
+                            <li>It describes the rate of growth of functions.</li>
+                            <li>Focus on what’s important by abstracting away low-order terms and constant factors.</li>
+                            <li>It is a way to compare the “sizes” of functions</li>
+                        </p>
+                        <img id="makeBig" src="bigO.png" alt=""><br>
+
+                        <h1>Big O Notation</h1><br>
+                        <li>also called Landau's symbol</li><p>
+                        <li>used in complexity theory, computer science, and mathematics to describe the asymptotic behavior of functions. It tells you how fast a function grows or declines.</li>
+                        <li>determined by how it responds to different sizes of a given dataset.</li>
+                        <li>Landau's symbol comes from the name of the German number theoretician Edmund Landau who invented the notation. The letter O is used because the rate of growth of a function is also called its order.</li></p>
+                        <img id="makeBig" src="Onotation.png" alt=""><br>
+                        <h1>O(1) - Constant</h1>
+                        <p>O(1) describes an algorithm that will always execute at the same time (or space) regardless of the size of the input data set.</p>
+                        <p><i>Example:</i><br>bool IsFirstElementNull(IList<string> elements) <br> { <br>
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return elements[0] == null; <br> }
+                        </p>
+                        <img id="makeBig1" src="O(1).png" alt=""><br>
+                        <h1>O(n) - Linear</h1>
+                        <p>An algorithm that is O(N) will take as many steps as there are elements of data. So when an array increases in size by one element, an O(N) algorithm will increase by one step.</p>
+                        <p><i>Example:</i><br>bool IsFirstElementNull(IList<string> elements) <br> { <br>
+                            <img id="makeBig1" src="O(n).png" alt="">
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for each(var element in elements) <br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{<br>
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if (element == value) return true;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;} <br>
+                            &nbsp; &nbsp; &nbsp; } <br> &nbsp; &nbsp;return false; <br> }
+                        </p> <br>
+                        <h1>O(2^N) - Exponential</h1>
+                        <p><li>O(2^N) denotes an algorithm whose growth doubles with each addition to the input data set.</li>
+                        <li>The growth curve of an O(2^N) function is exponential - starting off very shallow, then rising meteorically.</li>
+                        <li>An example of an O(2^N) function is the recursive calculation of Fibonacci numbers:</li>
+                        </p>
+                        <p><i>Example:</i><br>int Fib(int number) <br>{ <br> 
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if (number <= 1) return number; <br>
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;return Fib(number - 2) + Fib(number - 1); <br> }
+                        </p><br>
+                        <h1>O(logN) - Logarithmic</h1>
+                        <p><li>The iterative halving of data sets produces a growth curve that peaks at the beginning and slowly flattens out as the size of the data sets increases.</li>
+                        <li>Normally seen at algo whose size is repeatedly divided by a constant</li>
+                        <li>If the base is not indicated it is in base 2</li>
+                        </p>
+                        <p><i>Example:</i><br>f(int n) <br>{ <br> 
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;for (i = 1; i < n; i=i*2) ------------------O(log n) <br>
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; printf("%d", i); -----------------O(1) <br>
+                        }
+                        <img id="makeBig1" src="O(logN).png" alt="">
+                        </p> <br> <br> <br> <br> <br> <br>
+                        <img id="makeBig1" src="Graph.png" alt=""> <br> <br> <br> <br> <br> <br>
+                        <img id="makeBig1" src="numerucalComparison.png" alt=""> <br> <br> <br> <br> <br> <br> <br>
+                        <h1>GENERAL GUIDELINES FOR TIME REQUIREMENT ANALYSIS</h1> <br>
+                        <p><b>Loops</b><p>The running time for a loop is at most the running time of the statements inside the loop multiplied by the number of iterations</p></p>
+                        <p>for (i=0; i<=n; ++i)--------------------------------O(n) <br>
+                        &nbsp; &nbsp; &nbsp; { <br>
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;sum = sum + i*10; -----------O(1) <br>
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;printf(“sum is %d”, sum);---O(1) <br>
+                            &nbsp; &nbsp; &nbsp; }
+                        </p>
+                        <p><i>Running time = (O(1)+O(1)).O(n) = <span style="color: red;">O(n)</span></i></p>
+                        <br>
+                        <p><b>Nested Loops</b>
+                        <li>Analyze the program segment from the innermost loop to the outermost.</li>
+                        <li>The total running time of a statement inside a group of nested loops is the running time of the statement multiplied by the product of the sizes of all the loops.</li>
+                        </p>
+                        <p>i = 1;<br>
+                        while (i < n){---------------------------------------------------O(n) <br>
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for (k=0; k < m; ++k)---------------------O(n) <br>
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ++j;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;---------------- O(1) <br>
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ++i;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;---------------- O(1) <br>
+                            <p><i>Running time = O(n).O(n) = <span style="color: red;">O(n^2)</span></i></p>
+                        </p> <br>
+                        <p><b>Consecutive Statements</b> <br><p>The statement with the largest time complexity counts.</p></p>
+                        <p>for (j=0; j<=n; ++j)&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; --------------O(n) <br>
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; balance[I] = 0; &nbsp; &nbsp; &nbsp; --------------O(1) <br>
+                            for (i=0; i<=n; ++i)&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; --------------O(n) <br>
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;for (k=0; k<=n; ++k)   &nbsp; &nbsp; &nbsp; -----------O(n) <br>
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;member[j,k] = rate[j,k] + increase; &nbsp; &nbsp;-----O(1)
+                        </p>
+                        <p>Since the largest time complexity is O(n^2), then it is the time complexity for the statements above.</p>
+                        <br>
+                        <p><b>If/Else</b></p>
+                        <p>The running time of an if/else statement is never more than the running time of the test plus the larger running times of statement1 and statement2. <br>
+                            if (n <= 1) ------------------------------ O(1) <br>
+                            &nbsp; &nbsp; &nbsp; &nbsp; return 1; ---------------------  O(1) <br>
+                            else <br>
+                            &nbsp; &nbsp; &nbsp; &nbsp; return n+ 1;&nbsp; &nbsp; &nbsp;---------------O(1)
+                        </p>
+                        <p><i>Running time = O(1) + O(1) = <span style="color: red;">O(1)</span></i></p>
+
+                        <h1 id="willSmall">The algorithm that employs divide and conquer method</h1>
+                        <p>These algorithms usually have time complexities of O(n log n).  An algorithm is O(n log n) if it takes O(1) time to cut the problem size by a fraction. On the other hand, if constant time is required to merely reduce the problem by a constant amount, then the algorithm is really just an O(n).</p>
+                        <br>
+                        <h1>End of the Lesson</h1>
+        </div>
+        <div class="btn-group">
+            <!-- <a href="#" class="btn">Previous Lesson</a> -->
+            <a id="takeBtn" href="../../Quiz/Quiz1/AttemptQ1.html" class="btn">Take a Quiz</a>
+            <a href="../Lesson2/Lesson2.html" class="btn">Next Lesson</a>
+        </div>
+</body>
+
+</html>

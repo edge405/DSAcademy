@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 2</title>
+    <link rel="stylesheet" href="Lesson2.css">
+</head>
+<body>
+    <div>
+        <a href="../Lesson.html" class="back-btn">Back</a>
+    </div>
+    <div class="container">
+        <h1 id="lesson2">Lesson 2 : Solving Recurrences using Substitution</h1>
+        <h1>Recursion</h1>
+        <p>A particularly powerful kind of reduction, which can be described loosely as follows:
+            <li>If the given instance of the problem is small or simple enough, just solve it.</li>
+            <li>Otherwise, reduce the problem to one or more simpler instances of the same problem.</li>
+        </p>
+        <p>Recursion is generally expressed in terms of recurrences. In other words, when an algorithm calls to itself, we can often describe its running time by a recurrence equation which describes the overall running time of a problem of size n in terms of the running time on smaller inputs.</p>
+
+        <p><i>For example, the Fibonacci sequence is defined as:</i></p>
+        <p>int Fib(int i){<br>
+            &nbsp; &nbsp; &nbsp; &nbsp;if (i <= 1) return i; <br>
+            &nbsp; &nbsp; &nbsp; &nbsp;else return Fib(i - 2) + Fib(i - 1); <br> } <br>
+            The form of the recurrence is <br>
+            T(n) = aT(n/b)+f(n) <li>consists of one or more base cases and one or more recursive cases.</li>
+        </p>
+        <p><b>Techniques to Solve Recurrences</b>
+            <li>Substitution</li>
+            <li>Iteration</li>
+            <li>Master Theorem</li>
+        </p>
+        <h1>1. SUBSTITUTION METHOD</h1>
+        <p>The substitution method comprises of 3 steps</p>
+        <p>i. Guess the form of the solution <br>
+            ii. Verify by induction <br>
+            iii. Solve for constants &nbsp; &nbsp; &nbsp; &nbsp; 
+            <li>We substitute the guessed solution for the function when applying the inductive hypothesis to smaller values. Hence the name “substitution method”.
+            </li>
+            <li>This method is powerful, but we must be able to guess the form of the answer in order to apply it.            </li>
+        </p>
+        <p><i>Example 1:</i></p>
+        <p>T(n) = T(n-1) + 2n – 1, T(0) = 0 <br> <li>The method of forward substitution proceeds by generating the first half-dozen or so terms in the sequence described by the recurrence, in the hope that it will turn out to be a sequence we recognize.</li></p>
+        <img src="substitutionMethod.png" alt=""> <br>
+        <p>So we can guess that T(n)=n² <span style="color: red;">(Step 1)</span></p> <br>
+
+        <p>T(n) = T(n-1) + 2n – 1,&nbsp; &nbsp; &nbsp; &nbsp; T(0) = 0</p>
+        <p><span style="color: red;">(Step 2)</span>We will show that T(n) = n² satisfies the above recurrence for all n, by induction on n</p>
+        <p>The base case is n = 0; here T(0) = 0.</p>
+        <p>For n > 0, we have <br>
+            T(n) = T(n-1) + 2n - 1 <br>
+            &nbsp; &nbsp; &nbsp; &nbsp;<= (n-1)² + 2n - 1 <br>
+            &nbsp; &nbsp; &nbsp; &nbsp; <= (n² - 2n + 1) + 2n - 1 <br>
+            &nbsp; &nbsp; &nbsp; &nbsp; <= n²-2n+1+2n-1 = n² <span>(Step 3)</span>
+        </p>
+        <p><i>Example 2:</i><br> Suppose we are given the recurrence <br>T(n) = 4T (n/2)+ n <br><br>Let us guess that our solution to Example 2 is O(n2). <br><br>
+            Solution: <br> <br> Guess:&nbsp; &nbsp; &nbsp; &nbsp;T(n) < = n2 <br>
+            Given:&nbsp; &nbsp; &nbsp; &nbsp;T(n) = 4 T(n/2) + n <br> <br>
+            T (n)&nbsp; &nbsp; &nbsp; &nbsp;<=  4 (n/2)2+ n <br>
+            &nbsp; &nbsp; &nbsp; &nbsp;< = n2 + n <br>
+            &nbsp; &nbsp; &nbsp; &nbsp;< = n²
+        </p>
+        <p><b><i>Example 3:</i></b><br> <br> Show that <br>
+            T(n) = 2T(n/2) + n,&nbsp; &nbsp; &nbsp; &nbsp;Guess: T(n) = O(nLogn) <br>
+            We need to prove that T(n) <= nLogn <br> <br>
+            Solution: <br>
+            T(n) = 2T(n/2) + n <br>
+            &nbsp; &nbsp; &nbsp; &nbsp; <= 2((n/2)(Log(n/2))) + n <br>
+            &nbsp; &nbsp; &nbsp; &nbsp; <= nLog(n/2) + n <br>
+            &nbsp; &nbsp; &nbsp; &nbsp; <=  nLogn - nLog2 + n <br>
+            &nbsp; &nbsp; &nbsp; &nbsp; <=  nLogn - n + n <br>
+            &nbsp; &nbsp; &nbsp; &nbsp; <= nLogn
+        </p>
+        <p><i>The logarithm of the division of x and y is the difference of logarithm of x and logarithm of y. <br>
+            &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;    logb(x / y) = logb(x) - logb(y)
+        </i></p>
+        <p><b><i>Example 4:</i></b> <br> <br>
+            Find the running time using the Substitution Method: <br> <br>
+            T(n) = T(n-1) + n &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;Prove: T(n)=n <br><br>
+            Solution: <br><br>
+            T(n)&nbsp; &nbsp; &nbsp; &nbsp;= T(n-1) + n&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;Prove: T(n)=n <br>
+            T(0)&nbsp; &nbsp; &nbsp; &nbsp;= (0-1)+0 = 0 <br>
+            T(n)&nbsp; &nbsp; &nbsp; &nbsp;<=n-1+n <br>
+            &nbsp; &nbsp; &nbsp; &nbsp;  <=n+n <br>
+            &nbsp; &nbsp; &nbsp; &nbsp;   <=2n <br>
+            &nbsp; &nbsp; &nbsp; &nbsp; =n
+        </p>
+        <br> <br>
+        <h1>End of Lesson 2</h1>
+    </div>
+
+    <div class="btn-group">
+        <a href="../Lesson1/Lesson1.html" class="btn">Previous Lesson</a>
+        <a id="takeBtn" href="/Quiz/Quiz2/AttemptQ2.html" class="btn">Take a Quiz</a>
+        <a href="../Lesson3/Lesson3.html" class="btn">Next Lesson</a>
+    </div>
+</body>
+</html>
